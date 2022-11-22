@@ -26,3 +26,11 @@ expect(response.statusCode).toBe(200);
 })
 })
 
+describe("Test the root path", ()=> {
+    test("It should response the POST method", () => {
+        const response= request(app).post("https://localhost:8000/User/add").send({
+            "Name": "Maria",
+        })
+        expect(response.statusCode).toBe(200);
+    })
+})
